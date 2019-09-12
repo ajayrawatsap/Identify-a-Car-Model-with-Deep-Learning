@@ -127,3 +127,7 @@ Trainable params: 3,453,121
 Non-trainable params: 0
 _________________________________________________________________
 ```
+
+### Training and Validations Results
+The model was trained for 50 Epcohs on a kaggel notebook with GPU and achived accuracy of 0.88125 percent
+![results]https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_keras_cnn_base.PNG
