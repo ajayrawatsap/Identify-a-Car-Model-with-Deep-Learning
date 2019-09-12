@@ -12,7 +12,7 @@ Data science beginners often start with curated set of data, but it's a well-kno
 We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
 - Keras is a high-level deep learning framework and is very well suited for fast prototyping and for beginners. 
 - Pytorch is gaining popularity due to its use in Research and is considered pythonic, it provides flexibility to experiment with different Neural Network Architectures. 
-- TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting Ideas from Keras and Pytorch.
+- TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting Ideas from Keras and Pytorch. TensorFlow is most suited to deployment in production with support to multiple production environments.
 
 As we are dealing with Images, we will be focusing on Convolutional Neural Networks (CNNs / ConvNets), and start with simple CNN and train it from scratch.
 We will then move to advance techniques like Data Augmentation, Dropout, Batch Normalization and using Pre-Trained networks like VGG16 trained on ImageNet.
