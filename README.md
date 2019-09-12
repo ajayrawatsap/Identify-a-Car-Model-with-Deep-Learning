@@ -22,3 +22,9 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 <br>There are no straightforward answers to some of the questions and it depends on context and the type of problem or data that we are dealing with, and it will be my endeavor to answers some of the difficult questions with experimentation and analysis.
 
+# Pre-Requisites, Resources and Acknowledgments
+It is assumed that you have some experience in Python and Basic machine Learning Concepts.
+,br>Many of the Ideas in this are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras Library
+
+
+
