@@ -66,4 +66,33 @@ The CNN model architecture is shown below.
 
 - You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while Max pool layer halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course
 
+The keras code for buliding model is shown below
+'''python
+
+def build_cnn(display_summary =False):
+    model = models.Sequential()
+    model.add( layers.Conv2D(32, (3,3),  activation= 'relu', input_shape = (150, 150, 3)) )
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(64, (3,3),  activation= 'relu') )
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(128, (3,3),  activation= 'relu') )
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(128, (3,3),  activation= 'relu') )
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add(layers.Flatten())
+    model.add(layers.Dense(512, activation= 'relu'))
+    model.add(layers.Dense(1, activation= 'sigmoid'))
+
+    model.compile(loss = 'binary_crossentropy',
+                  optimizer = optimizers.RMSprop(lr = 1e-4),
+                  metrics = ['acc']
+                  )
+    if display_summary:
+       model.summary()
+    return model
+'''
 
