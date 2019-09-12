@@ -24,7 +24,8 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 # Pre-Requisites, Resources and Acknowledgments
 - It is assumed that you have some experience in Python and Basic machine Learning Concepts.
-<br>Many of the Ideas in this are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras Library
+
+- Many of the Ideas in this are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras Library
 
 - Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though its paid course the Videos are freely available on YouTube.
 
