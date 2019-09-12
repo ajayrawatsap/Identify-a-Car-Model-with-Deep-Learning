@@ -6,7 +6,10 @@ There are 4000 images of two of the popular cars (Swift and Wagonr) in India of 
 <br> The data is hosted at [Kaggle](https://www.kaggle.com/ajaykgp12/cars-wagonr-swift) which can be downloaded or you can also create a notebook directly on Kaggle and access data in your notebook.
 
 # Context
-Data science beginners often start with curated set of data, but it's a well-known fact that in a real Data Science Project, major time is spent on collecting, cleaning and organizing data.  Also, domain expertise is considered as important aspect of creating good ML models. Being an automobile enthusiast, I took up this challenge to collect images of two of the popular car models from a used car website, where users upload the images of the car they want to sell and then train a Deep Neural Network to identify model of a car from car images. In my search for images I found that approximately 10 percent of the car pictures did not represent the intended car correctly and those pictures must be deleted from final data.
+- Data science beginners often start with curated set of data, but it's a well-known fact that in a real Data Science Project, major time is spent on collecting, cleaning and organizing data.  Also, domain expertise is considered as important aspect of creating good ML models. 
+- Being an automobile enthusiast, I took up this challenge to collect images of two of the popular car models from a used car website, where users upload the images of the car they want to sell and then train a Deep Neural Network to identify model of a car from car images. 
+- In my search for images I found that approximately 10 percent of the car pictures did not represent the intended car correctly and those pictures must be deleted from final data.
+- T
 
 # Topics that would be covered 
 We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
@@ -32,4 +35,8 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 - Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though its paid course the Videos are freely available on YouTube.
 
 - The book  focuses on the practical application while  Andrew Ng gravitates towards theoretical concepts with easy to understand mathematics. I have personally benefit from both, and even though both differ in their approaches they complement each other well just like Ensemble Machine learning models.
+
+-Its recommended that that code be run on machine with GPU, there are many ways to achieve it without owning a high-end machine.  You can use Kaggle Notebook with GPU which is what I would be doing throughout the project. Links to Kaggle Notebooks will be shared and it can be forked, modified and results can be easily reproduced without any extra set up
+<br>Another way is to use Google Colab or Google Cloud Platform with free credits of 300 USD.
+
 
