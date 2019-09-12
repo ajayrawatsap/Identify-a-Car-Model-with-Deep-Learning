@@ -44,3 +44,16 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 - Its recommended that that code be run on machine with GPU, there are many ways to achieve it without owning a high-end machine.  You can use Kaggle Notebook with GPU which is what I would be doing throughout the project. Links to Kaggle Notebooks will be shared and it can be forked, modified and results can be easily reproduced without any extra set up
 <br>Another way is to use Google Colab or Google Cloud Platform with free credits of 300 USD.
+
+# A note on the motivation and challenges
+- When I started with this project my goal was to achieve a reasonable performance with my Image Classification model with more focus on building a robust model which can generalize well on unseen data.
+- The data is user generated and images are taken by many users from all over India, from different angles, under different lighting conditions and mostly using mobile devices with varying image quality. 
+- This presents an interesting challenge and I am very much curious as well as anxious as to how things would turn out. 
+  I had heard multiple stories on how some models which performed well during training and validation, failed  be performed on new    data that came from different distribution.
+- To make sure that our models are robust here are some techniques that we will apply.
+  1.	When gathering data, I made sure that I downloaded car images from multiple regions like Delhi, UP, Maharashtra etc.
+  2.	Delete images which are not car, incorrect model, closeup images, interior images. Anything which a human cannot recognize most likely ML model probably can’t recognize. Interestingly one of the class of data is WagonR, the model I owned for 7 years so it was easy for me to curate the data manually. This is where domain experience comes in handy.
+  3.	The data is randomized and split into Training Set with 2400 images, Validation Set with 800 images and test set with 800 images. The model will be trained on training set, fine-tuned with feedback from validation data and test data will not evaluated until end when we have found our best model based on validation set. This is important because the test set acts as unseen data which model will encounter in future and if it performs well on this data, our model  will perform well on future data.  To further challenge our model, I have created another set of test data which was taken from different used car website and  different city (Hyderabad).
+
+Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
+
