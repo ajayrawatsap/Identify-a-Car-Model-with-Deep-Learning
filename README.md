@@ -32,7 +32,7 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 - Many of the ideas presented here are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras Library
 
-- Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though its paid course the Videos are freely available on YouTube.
+- Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though its paid course the Videos are freely available on YouTube. Initially it was not easy to grasp the convolutions, but thanks to Andrew Ng, Convolution Neural Networks no longer appear to be convoluted
 
 - The book  focuses on the practical application while  Andrew Ng gravitates towards theoretical concepts with easy to understand mathematics. I have personally benefit from both, and even though both differ in their approaches they complement each other well just like Ensemble Machine learning models.
 
