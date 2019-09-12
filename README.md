@@ -67,7 +67,7 @@ The CNN model architecture is shown below.
 - You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while Max pool layer halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course
 
 The keras code for buliding model is shown below
-'''python
+```python
 
 def build_cnn(display_summary =False):
     model = models.Sequential()
@@ -94,5 +94,5 @@ def build_cnn(display_summary =False):
     if display_summary:
        model.summary()
     return model
-'''
+```
 
