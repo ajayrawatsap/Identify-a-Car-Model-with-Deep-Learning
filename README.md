@@ -54,3 +54,7 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
 
 # Training a base CNN model
+## Model Architecture
+The CNN model architecture is shown below.
+![model_arch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cnn_arch.PNG)
+
