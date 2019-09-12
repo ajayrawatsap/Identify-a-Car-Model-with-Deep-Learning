@@ -57,3 +57,13 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
 
+# Training a base CNN model
+## Model Architecture
+The CNN model architecture is shown below.
+![model_arch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cnn_arch.PNG)
+
+- The images are converted to 150 X 150 X 3 shape and fed to CNN model. The first CONVD layer performs convolution on the input image with 32 filters with filter size of 3, resulting in layer of dimension 148 X 148 X 32,  which is then down sampled by a Max Pool layer of filter size 2 and stride of 2 resulting in layer of dimensions 74X74X32.  We are using four CONVD layers each with filter size of 3, followed by a Max Pooling layer of filter size 2 and stride of 2. The output from last MAX pool layer is flattened and converted to Dense layer of shape 512 X 1. The Final output layer consists of a single layer with sigmoid activation function. The other layers use Relu Activation Function
+
+- You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while Max pool layer halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course
+
+
