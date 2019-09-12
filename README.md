@@ -96,6 +96,7 @@ def build_cnn(display_summary =False):
     return model
 ```
 Model summary 
+```
 ______________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -125,3 +126,4 @@ Total params: 3,453,121
 Trainable params: 3,453,121
 Non-trainable params: 0
 _________________________________________________________________
+```
