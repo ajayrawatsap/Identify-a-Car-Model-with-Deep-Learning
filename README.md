@@ -53,3 +53,4 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 
 Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
 
+# Training a base CNN model
