@@ -58,3 +58,4 @@ Hold on with your seat belts, grab some popcorn, and be ready for an exciting as
 The CNN model architecture is shown below.
 ![model_arch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cnn_arch.PNG)
 
+The images are converted to 150 X 150 X 3 shape and fed to CONVD layer. The first CONVD layer consists of 32 filters with filter size of 3 which is then down sampled by a Max Pool layer of filter size 2 and stride of 2 resulting in layer of dimensions 74X74X3.  We are using four CONVD layers each with filter size of 3, followed by a Max Pooling layer of filter size 2 and stride of 2. The output from last MAX pool layer is flattened and converted to Dense layer of shape 512 X 1. The Final output layer consists of a single layer with sigmoid activation function. The other layers use Relu Activation Function
