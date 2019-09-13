@@ -139,7 +139,8 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
  ## Training in Pytorch
     The same model in pytorch can be written as shown below
-    ```python
+```python
+
     class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -150,10 +151,9 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         self.conv3 =  nn.Conv2d(in_channels= 64, out_channels= 128, kernel_size= 3)
         self.conv4 =  nn.Conv2d(in_channels= 128, out_channels= 128, kernel_size= 3)
     
-#       128 * 128 * 7 is the output of the last max pool layer
+       #128 * 128 * 7 is the output of the last max pool layer
         self.fc1 = nn.Linear(128 * 7 * 7, 512)
-        self.fc2 = nn.Linear(512, 2)
-       
+        self.fc2 = nn.Linear(512, 2)       
 
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
