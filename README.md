@@ -139,8 +139,8 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
  ## Training in Pytorch
     The same model in pytorch can be written as shown below
+    
 ```python
-
     class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
