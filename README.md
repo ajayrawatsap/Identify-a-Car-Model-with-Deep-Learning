@@ -176,3 +176,4 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
 ### Pytorch source code
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-cnn?scriptVersionId=20548126)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_cnn.ipynb)
+# Using Data Augmentation and Dropout
