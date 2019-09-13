@@ -141,7 +141,7 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
     The same model in pytorch can be written as shown below
     
 ```python
-    class Net(nn.Module):
+ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(in_channels= 3, out_channels=32, kernel_size= 3)
