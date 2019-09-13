@@ -128,13 +128,13 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-### Training and Validations Results
+### Keras: Training and Validations Results
 The model was trained for 50 epochs on a Kaggle notebook with GPU and achived accuracy of 88.125 percent on validation set.
 ![results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_keras_cnn_base.PNG)
 - I had set a conservative target of 80% accuracy, but it seems our baseline CNN model performed better than expected with 88% accuracy.  If you ask me if this a good accuracy, and I might say it’s pretty good considering that a random classifier will be 50% accurate as there are  equal number of samples of each class.  But how is the performance compared to a human, and I will agree that humans will typically perform with 96% accuracy. The benchmark is raised, and our goal will be to achieve near human performance. At this point we have no idea if we can achieve the target accuracy.
 - Ok, the model is pretty good for a baseline model, what about its robustness, can it perform well on unseen data?. As we can see from the screenshot that the training accuracy is much higher than the validation accuracy throughout all epochs, and now we are talking the bias and variance tradeoff. The model is clearly showing classic symptoms of low bias (since training accuracy is near 100%), and high variance(since validation accuracy is much lower at 88) or overfitting.  I would be not willing to put this model into production even if you think the accuracy is good enough. As we will see there many ways to deal with this and we will explore it in next sections.
 
-### Source Code in Keras
+### Keras source code 
  - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_cnn_baseline.ipynb)
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
  ## Training in Pytorch
@@ -166,3 +166,6 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
  ```
+
+### Keras: Training and Validations Results
+1[keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
