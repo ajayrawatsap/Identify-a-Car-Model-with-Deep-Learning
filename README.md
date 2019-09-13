@@ -168,4 +168,4 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
  ```
 
 ### Keras: Training and Validations Results
-1[keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
+![keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
