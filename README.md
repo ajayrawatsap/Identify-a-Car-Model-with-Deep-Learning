@@ -167,8 +167,11 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         x = self.fc2(x)
  ```
 
-### Keras: Training and Validations Results
+### Pytorch: Training and Validations Results
 ![keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
 - It was little time consuming to train the same model in Pytorch as it does not have Keras like fit method to train as well as evaluation your model on validation set. In Pytorch you will have to write your own training and test methods and run each method for every epoch. In Keras it’s done under single fit method.  We can see that the Pytorch model displays same pattern as Keras with low bias and high variance.
 - The Pytorch performs slightly better on validation accuracy of 0.89000 compared to 0.88125 on Keras. This can be due to normalization, in Pytorch the image pixel values are scaled to [-1,1] while in Keras its [0,1].  When I used the scaling of [0,1] in Pytorch the results were even worse than Keras. So, its would be worthwhile to revisit and check how Keras performs under same normalization
 
+### Pytorch source code
+- [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-cnn?scriptVersionId=20548126)
+- [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_cnn.ipynb)
