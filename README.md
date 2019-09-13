@@ -58,14 +58,14 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
 
 # Training a base CNN model
-## Model Architecture
+
 The CNN model architecture is shown below.
 ![model_arch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cnn_arch.PNG)
 
 - The images are converted to 150 X 150 X 3 shape and fed to CNN model. The first CONVD layer performs convolution on the input image with 32 filters with filter size of 3, resulting in layer of dimension 148 X 148 X 32,  which is then down sampled by a Max Pool layer of filter size 2 and stride of 2 resulting in layer of dimensions 74X74X32.  We are using four CONVD layers each with filter size of 3, followed by a Max Pooling layer of filter size 2 and stride of 2. The output from last MAX pool layer is flattened and converted to Dense layer of shape 512 X 1. The Final output layer consists of a single layer with sigmoid activation function. The other layers use Relu Activation Function
 
 - You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while Max pool layer halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course
-
+## Training in Keras
 The keras code for buliding model is shown below
 ```python
 
@@ -128,12 +128,41 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-## Training and Validations Results
+### Training and Validations Results
 The model was trained for 50 epochs on a Kaggle notebook with GPU and achived accuracy of 88.125 percent on validation set.
 ![results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_keras_cnn_base.PNG)
 - I had set a conservative target of 80% accuracy, but it seems our baseline CNN model performed better than expected with 88% accuracy.  If you ask me if this a good accuracy, and I might say it’s pretty good considering that a random classifier will be 50% accurate as there are  equal number of samples of each class.  But how is the performance compared to a human, and I will agree that humans will typically perform with 96% accuracy. The benchmark is raised, and our goal will be to achieve near human performance. At this point we have no idea if we can achieve the target accuracy.
 - Ok, the model is pretty good for a baseline model, what about its robustness, can it perform well on unseen data?. As we can see from the screenshot that the training accuracy is much higher than the validation accuracy throughout all epochs, and now we are talking the bias and variance tradeoff. The model is clearly showing classic symptoms of low bias (since training accuracy is near 100%), and high variance(since validation accuracy is much lower at 88) or overfitting.  I would be not willing to put this model into production even if you think the accuracy is good enough. As we will see there many ways to deal with this and we will explore it in next sections.
 
-## Source Code in Keras
+### Source Code in Keras
  - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_cnn_baseline.ipynb)
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
+ ## Training in Pytorch
+    The same model in pytorch can be written as shown below
+    ```python
+    class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels= 3, out_channels=32, kernel_size= 3)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride= 2)
+        
+        self.conv2 =  nn.Conv2d(in_channels= 32, out_channels= 64, kernel_size= 3)
+        self.conv3 =  nn.Conv2d(in_channels= 64, out_channels= 128, kernel_size= 3)
+        self.conv4 =  nn.Conv2d(in_channels= 128, out_channels= 128, kernel_size= 3)
+    
+#       128 * 128 * 7 is the output of the last max pool layer
+        self.fc1 = nn.Linear(128 * 7 * 7, 512)
+        self.fc2 = nn.Linear(512, 2)
+       
+
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = self.pool(F.relu(self.conv3(x)))
+        x = self.pool(F.relu(self.conv4(x)))
+        
+        #this is similar to flatten in keras but keras is smart to figure out dimensions by iteself.
+        x = x.view(-1, 128 * 7 * 7)
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+ ```
