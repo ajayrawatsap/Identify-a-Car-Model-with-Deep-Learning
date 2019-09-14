@@ -200,5 +200,5 @@ It is a common misconception that data augmentation increases the training data 
  
 
 ## Data Augmentation source code in Keras
-[kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20565354)
-[github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug.ipynp.ipynb)
+- [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20565354)
+- [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug.ipynp.ipynb)
