@@ -191,7 +191,7 @@ datagen = ImageDataGenerator( rotation_range= 40,
  ```
 ![keras_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug.PNG)
 
-It is a common misconception that data augmentation increases the training data size.  The data augmentation is applied on the fly during training and a random transformation is applied every epoch. This way model sees a different variation of the same image on every epoch which explains why it works so well. Another thing to keep in mind is data augmentation is only applied on training set and not on validation or test set.
+It is a common misconception that data augmentation increases the training data size.  The data augmentation does not result in more images and the trasnformations are applied on the fly during training and a random transformation is applied every epoch. This way model sees a different variation of the same image on every epoch which explains why it works so well. Another thing to keep in mind is data augmentation is only applied on training set and not on validation or test set.
 ## Data Augmentation Results in Keras
 ![kera_sug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug_results.PNG)
 
@@ -218,4 +218,4 @@ transform_train = transforms.Compose( [
 ![pytorch_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug.PNG)
 ## Data Augmentation Results in Pytorch
 ![pytorch_aug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug_results.PNG)
-Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pytorch score of 0.965 is still ahead of Keras score of 0.95, but I believe with some fine tuning we can achieve similar score in Keras too. What’s more important is that our strategy seems to be working fine and we have broken the benchmark human performed of 0.96 in this step. But we will not celebrate yet, as we have not tested on the test set against which we will be comparing the benchmark performance. We will continue to fine tune with other strategies like Dropout, Batch Normalization and Transfer Learning. Stay tuned.
+Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pytorch score of 0.965 is still ahead of Keras score of 0.95, but I believe with some fine tuning we can achieve similar score in Keras too. What’s more important is that our strategy seems to be working fine and we have broken the benchmark human performed of 0.96 in this step. But we will not celebrate yet, as we have not tested on the test set against which we will compare the benchmark performance. We will continue to fine tune with other strategies like Dropout, Batch Normalization and Transfer Learning. Stay tuned.
