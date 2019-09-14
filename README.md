@@ -202,3 +202,17 @@ It is a common misconception that data augmentation increases the training data 
 ## Data Augmentation source code in Keras
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20565354)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug.ipynp.ipynb)
+
+## Data Augmentation in Pytorch
+The data augmentation works in similar way in Pytorch and we have also defined some additional transformations like color saturations. The below code achieves this in Pytorch with a sample output on images. It’s important to verify how images appear after transformation as it may negatively impact model performance. For example too much cropping can lead to loss of information or vertical flip may not be required as in our case.
+```python 
+transform_train = transforms.Compose( [                                  
+                                 transforms.Resize((150,150)), 
+#                                  transforms.RandomCrop(size =100),
+                                 transforms.RandomHorizontalFlip(),
+                                 transforms.RandomRotation(20, resample=PIL.Image.BILINEAR),
+                                 transforms.ColorJitter(hue= 0.01, saturation=.01),
+                                 transforms.RandomAffine(degrees = 0, translate=(0.2,0.2),  shear= 0.2),
+                                  ])
+ ```                                
+![pytorch_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug.PNG)
