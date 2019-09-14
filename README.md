@@ -195,4 +195,10 @@ It is a common misconception that data augmentation increases the training data 
 ## Data Augmentation Results in Keras
 ![kera_sug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug_results.PNG)
 
-The results are impressive, and our validation accuracy jumped from 0.88 to 0.95, we are very close to our target accuracy of 0.96 or more to beat human performance. Please note that the benchmark accuracy of 0.96 for humans for based on what I have read on research papers and for our data it may or may not be correct. But having a benchmark is always good to compare our model performed. 
+- The results are impressive, and our validation accuracy jumped from 0.88 to 0.95, we are very close to our target accuracy of 0.96 or more to beat human performance. Our model is not overfitting, as we can see the training and validation curves are close to each other
+- Please note that the benchmark accuracy of 0.96 for humans for based on what I have read on research papers and for our data it may or may not eb correct. But having a benchmark is always good to compare our model performed. 
+ 
+
+## Data Augmentation source code in Keras
+[kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20565354)
+[github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug.ipynp.ipynb)
