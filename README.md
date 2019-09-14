@@ -216,3 +216,6 @@ transform_train = transforms.Compose( [
                                   ])
  ```                                
 ![pytorch_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug.PNG)
+## Data Augmentation Results in Pytorch
+![pytorch_aug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug_results.PNG)
+Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pytorch score of 0.965 is still ahead of Keras score of 0.95, but I believe with some fine tuning we can achieve similar score in Keras too. What’s more important is that our strategy seems to be working fine and we have broken the benchmark human performed of 0.96 in this step. But we will not celebrate yet, as we have not tested on the test set against which we will be comparing the benchmark performance. We will continue to fine tune with other strategies like Dropout, Batch Normalization and Transfer Learning. Stay tuned.
