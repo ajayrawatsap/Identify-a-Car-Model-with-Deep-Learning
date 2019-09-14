@@ -194,4 +194,5 @@ datagen = ImageDataGenerator( rotation_range= 40,
 It is a common misconception that data augmentation increases the training data size.  The data augmentation is applied on the fly during training and a random transformation is applied every epoch. This way model sees a different variation of the same image on every epoch which explains why it works so well. Another thing to keep in mind is data augmentation is only applied on training set and not on validation or test set.
 ## Data Augmentation Results in Keras
 ![kera_sug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug_results.PNG)
+
 The results are impressive, and our validation accuracy jumped from 0.88 to 0.95, we are very close to our target accuracy of 0.96 or more to beat human performance. Please note that the benchmark accuracy of 0.96 for humans for based on what I have read on research papers and for our data it may or may not be correct. But having a benchmark is always good to compare our model performed. 
