@@ -174,6 +174,6 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
 - The Pytorch performs  better with validation accuracy of 0.896 compared to 0.88125 in Keras. This can be due to normalization, in Pytorch the image pixel values are scaled to [-1,1] while in Keras the same are scaled to [0,1].  When I used the scaling of [0,1] in Pytorch the results were even worse than Keras. So, its would be worthwhile to revisit and check how Keras performs under same normalization
 
 ### Pytorch source code
-- [kaggle](https://www.kaggle.com/kernels/scriptcontent/20577825/download)
+- [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-cnn?scriptVersionId=20577825)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_cnn.ipynb)
 # Using Data Augmentation and Dropout
