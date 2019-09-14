@@ -176,4 +176,16 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
 ### Pytorch source code
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-cnn?scriptVersionId=20577825)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_cnn.ipynb)
-# Using Data Augmentation and Dropout
+# Using Data Augmentation 
+We saw that vanilla CNN model overfitted on our data, this is because the number of training samples of 2400 images is less for a deep neural network.  We can collect more data if it is easy to do so, but in some cases that may not be feasible. One of widely used technique to solve this is by data augmentation. We can apply a few images transforms like, rotating it, horizontal flip, random cropping, shearing etc.
+## Data Augmentation 
+The code below achieves this in Keras and the corresponding output is also shown when the transformations are applied to a single image.
+```python
+datagen = ImageDataGenerator( rotation_range= 40,
+                              width_shift_range = 0.2,
+                             height_shift_range = 0.2,
+                             shear_range = 0.2,
+                             zoom_range = 0.2,
+                             horizontal_flip = True,                           
+                            )
+ ```
