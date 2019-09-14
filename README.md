@@ -189,4 +189,4 @@ datagen = ImageDataGenerator( rotation_range= 40,
                              horizontal_flip = True,                           
                             )
  ```
-![keras_aug]
+![keras_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug.PNG)
