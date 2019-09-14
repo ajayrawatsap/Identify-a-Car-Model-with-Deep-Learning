@@ -139,7 +139,7 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
  - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_cnn_baseline.ipynb)
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
  ## Training in Pytorch
-    The same model in pytorch can be written as shown below
+    The same model in pytorch can be written as shown below.
     
 ```python
  class Net(nn.Module):
@@ -167,7 +167,7 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
  ```
-
+The Pytorch model differs slightly as we have two output neurons instead of one in Keras.  This is fine because in this case we can imagine each neuron outputting result corresponding to each class. The loss function [CrossEntropyLoss]( https://pytorch.org/docs/stable/nn.html#crossentropyloss) used in Pytorch includes the SoftMax activation and therefor no need to activate the output neurons. In Keras a single output neuron activated by sigmoid activation function which is outputting probably of positive class.  
 ### Pytorch: Training and Validations Results
 ![keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
 - It was little time consuming to re-write the same model in Pytorch as it does not have Keras like fit method to train as well as evaluation your model on validation set. In Pytorch you will have to write your own training and test methods and run each method for every epoch. The advantage is you have more control at every epoch and can write custom metrics or loss functions easily.We can see that the Pytorch model displays same pattern as Keras with low bias and high variance.
