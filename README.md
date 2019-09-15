@@ -224,7 +224,7 @@ Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pyt
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-aug?scriptVersionId=20578393)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug.ipynp.ipynb)
 
-#Train with Dropout
+# Train with Dropout
 Drop was proposed by Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov in their [paper](http://jmlr.org/papers/v15/srivastava14a.html) as way to prevent neural networks from overfitting.
 It works by randomly turning off activations of some neurons. The number of neurons to drop are defined by a probability defined in dropout layer.
 The image below explains this process.
