@@ -1,12 +1,12 @@
 # Identify-a-Car-Model-with-Deep-Learning
-Explore how to practice real world Data Science by collecting data, curating it and apply advance Deep Learning techniques to
-create high quality models which can be deployed in Production.
+Explore how to practice real world Data Science by collecting data, curating it and apply advanced Deep Learning techniques to
+create high quality models which can be deployed in production.
 
 # Data
 - There are 4000 images of two of the popular cars (Swift and Wagonr) in India of make Maruti Suzuki with 2000 pictures belonging to
-each model. The data is divided into training set with 2400 images , validation set with 800 images and test set with 800 images. 
+each model class. The data is divided into training set with 2400 images, validation set with 800 images and test set with 800 images. 
 - The data was randomized before splitting into training, test and validation set.
-- The data was collected using a web scraper written in python. Selenium Library was used to load the full HTML page and then
+- Data was collected using a web scraper written in python. Selenium library was used to load the full HTML page and then
 Beautifulsoup library was used to extract and download images from HTML tags
 - The data is hosted at [Kaggle](https://www.kaggle.com/ajaykgp12/cars-wagonr-swift) which can be downloaded or you can 
 also create a notebook directly on Kaggle and access data in your notebook.
@@ -19,12 +19,12 @@ also create a notebook directly on Kaggle and access data in your notebook.
 
 # Topics that would be covered 
 We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
-- Keras is a high-level deep learning framework and is very well suited for fast prototyping and for beginners. 
+- Keras is a high-level deep learning framework and is very well suited for fast prototyping and is also recommended for beginners. 
 - Pytorch is gaining popularity due to its use in Research and is considered pythonic, it provides flexibility to experiment with different Neural Network Architectures. 
 - TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting Ideas from Keras and Pytorch. TensorFlow is most suited to deployment in production with support to multiple production environments.
 
 As we are dealing with Images, we will be focusing on Convolutional Neural Networks (CNNs / ConvNets), and start with simple CNN and train it from scratch.
-We will then move to advance techniques like Data Augmentation, Dropout, Batch Normalization and using Pre-Trained networks like VGG16 trained on ImageNet.
+We will then move to advance techniques like Data Augmentation, Dropout, Batch Normalization and  Transfer Learning using Pre-Trained networks like VGG16 trained on ImageNet.
 <br> As we progress in our journey we will also explore some key aspects below, which are important for any Data Science Project.
 1.	How much data is enough to get reliable results from Deep Neural Networks and is more data is always good?
 2.	How do I deal with Bias and Variance tradeoff, and how to select best model which can generalize better without sacrificing too much of performance?
@@ -50,11 +50,11 @@ We will then move to advance techniques like Data Augmentation, Dropout, Batch N
 - When I started with this project my goal was to achieve a reasonable performance with my Image Classification model with more focus on building a robust model which can generalize well on unseen data.
 - The data is user generated and images are taken by many users from all over India, from different angles, under different lighting conditions and mostly using mobile devices with varying image quality. 
 - This presents an interesting challenge and I am very much curious as well as anxious as to how things would turn out. 
-  I had heard multiple stories on how some models which performed well during training and validation, failed  be performed on new    data that came from different distribution.
+  I had heard multiple stories on how some models which performed well during training, failed  te perform on new data that came from different distribution.
 - To make sure that our models are robust here are some techniques that we will apply.
   1.	When gathering data, I made sure that I downloaded car images from multiple regions like Delhi, UP, Maharashtra etc.
   2.	Delete images which are not car, incorrect model, closeup images, interior images. Anything which a human cannot recognize most likely ML model probably can’t recognize. Interestingly one of the class of data is WagonR, the model I owned for 7 years so it was easy for me to curate the data manually. This is where domain experience comes in handy.
-  3.	The data is randomized and split into Training Set with 2400 images, Validation Set with 800 images and test set with 800 images. The model will be trained on training set, fine-tuned with feedback from validation data and test data will not evaluated until end when we have found our best model based on validation set. This is important because the test set acts as unseen data which model will encounter in future and if it performs well on this data, our model  will perform well on future data.  To further challenge our model, I have created another set of test data which was taken from different used car website and  different city (Hyderabad).
+  3.	The data is randomized and split into Training Set with 2400 images, Validation Set with 800 images and test set with 800 images. The model will be trained on training set, fine-tuned with feedback from validation data and test data will not evaluated until end when we have found our best model based on validation set. This is important because the test set acts as unseen data which model will encounter in future and if it performs well on this data, our model  will perform well on unseen data. To further challenge our model, I have created another set of test data which was taken from different used car website and  different city (Hyderabad).
 
 Hold on with your seat belts, grab some popcorn, and be ready for an exciting as well as thrilling ride, this sure will be a long and interesting one.
 
@@ -226,7 +226,7 @@ Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pyt
 
 # Train with Dropout
 Dropout was proposed by Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov in their [paper](http://jmlr.org/papers/v15/srivastava14a.html) as way to prevent neural networks from overfitting.
-It works by randomly turning off activations of some neurons. The number of neurons to drop are defined by a probability defined in dropout layer.
+It works by randomly turning off activations of some neurons. The number of neurons to drop are defined by  probability defined in dropout layer.
 The image below explains this process.
 ![dropout](https://www.researchgate.net/profile/Amine_Ben_khalifa/publication/309206911/figure/fig3/AS:418379505651712@1476760855735/Dropout-neural-network-model-a-is-a-standard-neural-network-b-is-the-same-network.png)
 - You can imagine this process by taking an example of classroom where in a class only a few students would generally participate in discussions and the rest of class remains silent. The quality of teaching suffers because teacher is changing the content of the teaching based on the few students. If teacher randomly asks a group of students to participate in discussion, the silent ones would start paying more attention and teacher can fine tune the content based on more feedback.
