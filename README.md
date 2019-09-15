@@ -239,3 +239,5 @@ Its very simple to add dropout layer in keras as shown in code example below
   model.add(layers.Flatten())
   model.add(layers.Dropout(0.5))
 ```
+## Dropout Results with Keras
+![keras_drop_res](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_drop.PNG)
