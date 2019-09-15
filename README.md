@@ -231,4 +231,11 @@ The image below explains this process.
 ![dropout](https://www.researchgate.net/profile/Amine_Ben_khalifa/publication/309206911/figure/fig3/AS:418379505651712@1476760855735/Dropout-neural-network-model-a-is-a-standard-neural-network-b-is-the-same-network.png)
 - You can imagine this process by taking an example of classroom where in a class only a few students would generally participate in discussions and the rest of class remains silent. The quality of teaching suffers because teacher is changing the content of the teaching based on the few students. If teacher randomly asks a group of students to participate in discussion, the silent ones would start paying more attention and teacher can fine tune the content based on more feedback.
 
-- We will apply dropout immediately after flattening the layer. If you see the network architecture the number of neurons on flattened layer is 6272 and we will apply drop out on the layer by randomly dropping 50% neurons. There is no need to apply dropout on ConvD layers as the output neurons are few
+- We will apply dropout immediately after flattening the layer. If you see the network architecture the number of neurons on flattened layer is 6272 and we will apply drop out on the layer by randomly dropping 50% neurons. There is no need to apply dropout on ConvD layers as the output neurons are few. We will also need to rum more. We will also need to train for more epochs(200) as dropout takes more iteration to converge 
+
+## Dropout in Keras
+Its very simple to add dropout layer in keras as shown in code example below
+```python
+  model.add(layers.Flatten())
+  model.add(layers.Dropout(0.5))
+```
