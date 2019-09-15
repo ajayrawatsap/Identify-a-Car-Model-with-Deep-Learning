@@ -225,8 +225,8 @@ Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pyt
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug.ipynp.ipynb)
 
 # Train with Dropout
-Drop was proposed by Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov in their [paper](http://jmlr.org/papers/v15/srivastava14a.html) as way to prevent neural networks from overfitting.
+Dropout was proposed by Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov in their [paper](http://jmlr.org/papers/v15/srivastava14a.html) as way to prevent neural networks from overfitting.
 It works by randomly turning off activations of some neurons. The number of neurons to drop are defined by a probability defined in dropout layer.
 The image below explains this process.
 ![dropout](https://www.researchgate.net/profile/Amine_Ben_khalifa/publication/309206911/figure/fig3/AS:418379505651712@1476760855735/Dropout-neural-network-model-a-is-a-standard-neural-network-b-is-the-same-network.png)
-You can imagine that in class a few students would generally participate in discussions and the 
+You can imagine this process by taking an example of classroom where in class a few students would generally participate in discussions and the rest of class remains silent. The quality of teaching suffers because teacher is changing the content of the teaching based on the few students. If teacher randomly asks a group of students to participate in discussion, the silent ones would start paying more attention and teacher can fine tune the content based on more feedback.
