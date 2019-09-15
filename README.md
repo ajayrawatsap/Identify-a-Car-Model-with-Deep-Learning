@@ -241,3 +241,8 @@ Its very simple to add dropout layer in keras as shown in code example below
 ```
 ## Dropout Results with Keras
 ![keras_drop_res](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_drop.PNG)
+The effect of dropout was marginal, and our validation score improved from 0.95 to 0.956. We will however continue with dropout and fine tune our model again with batch normalization in next section
+## Dropout Source code in Keras
+-	[kaggle]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20566728)
+-	[github]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_drop.PNG)
+
