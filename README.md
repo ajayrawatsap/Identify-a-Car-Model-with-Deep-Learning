@@ -246,7 +246,7 @@ The effect of dropout was marginal, and our validation score improved from 0.95 
 -	[kaggle]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20566728)
 -	[github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug_drop.ipynb)
 
-## Dropout in Keras
+## Dropout in Pytorch
 The relevant portion of code to set dropout is shown below
 ```python
 class Net(nn.Module):
