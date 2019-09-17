@@ -264,7 +264,7 @@ class Net(nn.Module):
  ```
 
 ## Dropout Results with Pytorch
-![drop_pytorch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_drop.PNG)
+![drop_pytorch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_drop.PNG)
 Unlike in Keras he validation accuracy decreased with dropout from 0.966 to 0.963 and the validation and training curves are also similar.  Since there is not noticeable improvement in either accuracy not variance, we will drop the dropout for Pytorch and continue with Batch Normalization in next section without dropout
 
 ## Dropout Source code in Pytorch
