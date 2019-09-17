@@ -246,3 +246,27 @@ The effect of dropout was marginal, and our validation score improved from 0.95 
 -	[kaggle]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20566728)
 -	[github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug_drop.ipynb)
 
+## Dropout in Keras
+The relevant portion of code to set dropout is shown below
+```python
+class Net(nn.Module):
+    def __init__(self):
+        .....
+        self.dropout = nn.Dropout(p=0.5)
+       
+
+    def forward(self, x):  
+        ........
+        x = x.view(-1, 128 * 7 * 7)   
+        x = self.dropout(x)
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+ ```
+
+## Dropout Results with Pytorch
+![drop_pytorch][https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_drop.PNG]
+Unlike in Keras he validation accuracy decreased with dropout from 0.966 to 0.963 and the validation and training curves are also similar.  Since there is not noticeable improvement in either accuracy not variance, we will drop the dropout for Pytorch and continue with Batch Normalization in next section without dropout
+
+## Dropout Source code in Pytorch
+- [Kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-aug-bn?scriptVersionId=20582538)
+- [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug_drop.ipynb)
