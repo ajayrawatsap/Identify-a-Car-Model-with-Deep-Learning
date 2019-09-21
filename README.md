@@ -274,8 +274,10 @@ Unlike in Keras the validation accuracy decreased with dropout from 0.966 to 0.9
 ## Batch normalization
 - [Batch normalization](https://en.wikipedia.org/wiki/Batch_normalization) is a technique for improving the speed, performance, and stability of artificial neural networks. Batch normalization was introduced in a 2015 [paper](https://arxiv.org/pdf/1502.03167.pdf). It is used to normalize the input layer by adjusting and scaling the activations.
 
-- In a typical neural network, we pre-process the data by normalizing so that the input values in well-defined range. For example, the Image pixel values are between [0, 255] and we have converted it to [-1,1] as in case of our Pytorch model or [0,1] for our Keras Model.  
+- In a typical neural network, we pre-process the data by normalizing so that the input values in well-defined range. For example, the Image pixel values are between [0, 255] and we have converted it to [-1,1] as in case of our Pytorch model or [0,1] for our Keras Model. 
+
+-Input –> first layer -> activation  function  ->  output -> second layer
 - The normalized input feature is then passed to first layer of neural network which then passes through activation function. As the neural network becomes deeper and deeper, the subsequent input and outputs are no longer of same distribution which results in internal covariate shift.
- Input –> first layer -> activation  function  ->  output -> second layer
+ 
 - [The basic idea]( https://mlexplained.com/2018/01/10/an-intuitive-explanation-of-why-batch-normalization-really-works-normalization-in-deep-learning-part-1/)  behind batch normalization is to limit covariate shift by normalizing the activations of each layer (transforming the inputs to be mean 0 and unit variance). This, supposedly, allows each layer to learn on a more stable distribution of inputs, and would thus accelerate the training of the network.
 
