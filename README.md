@@ -281,3 +281,7 @@ Unlike in Keras the validation accuracy decreased with dropout from 0.966 to 0.9
  
 - [The basic idea]( https://mlexplained.com/2018/01/10/an-intuitive-explanation-of-why-batch-normalization-really-works-normalization-in-deep-learning-part-1/)  behind batch normalization is to limit covariate shift by normalizing the activations of each layer (transforming the inputs to be mean 0 and unit variance). This, supposedly, allows each layer to learn on a more stable distribution of inputs, and would thus accelerate the training of the network.
 
+- The original paper recommended that batch normalization be done before activation function.
+    Input –> first layer -> batch normalization-> activation function  ->  output -> second layer
+    
+    But as we will see it may not always lead to better results and sometimes batch normalization works  better after activation function
