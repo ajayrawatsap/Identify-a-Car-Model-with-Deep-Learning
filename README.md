@@ -288,7 +288,8 @@ Unlike in Keras the validation accuracy decreased with dropout from 0.966 to 0.9
 
 ## Batch Normalization in Keras
 The implementation of Keras for batch implementation is shown below. Here batch normalization is done after activation function as this resulted in better performance than doing it before activation function.  
-'''python
+```python
+
 def build_cnn(display_summary =False):
     model = models.Sequential()
     model.add( layers.Conv2D(32, (3,3),  input_shape = (150, 150, 3)) )    
