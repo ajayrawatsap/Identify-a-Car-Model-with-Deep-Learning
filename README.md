@@ -330,3 +330,11 @@ def build_cnn(display_summary =False):
     return model
 ```
 
+## Batch Normalization results in Keras
+The accuracy on validation boosted from 0.956 to 0.961 and training validation curves are also smoother.
+![bn_keras]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_bn_results.PNG)
+This concludes the custom CNN training and we will move to transfer learning in next section where we will use a pre-trained network VGG16 and find out if we can further improve our model performance.
+
+## Batch Normalization source code in Keras
+[keras]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20617761)
+[guthub]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug_drop_bn.ipynb)
