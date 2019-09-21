@@ -285,3 +285,47 @@ Unlike in Keras the validation accuracy decreased with dropout from 0.966 to 0.9
     Input –> first layer -> batch normalization-> activation function  ->  output -> second layer
     
     But as we will see it may not always lead to better results and sometimes batch normalization works  better after activation function
+
+## Batch Normalization in Keras
+The implementation of Keras for batch implementation is shown below. Here batch normalization is done after activation function as this resulted in better performance than doing it before activation function.  
+'''python
+def build_cnn(display_summary =False):
+    model = models.Sequential()
+    model.add( layers.Conv2D(32, (3,3),  input_shape = (150, 150, 3)) )    
+    model.add(Activation("relu"))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(64, (3,3)) )    
+    model.add(Activation("relu"))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(128, (3,3)) )   
+    model.add(Activation("relu"))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add( layers.Conv2D(128, (3,3)) )    
+    model.add(Activation("relu"))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2,2)))
+
+    model.add(layers.Flatten())
+    model.add(layers.Dropout(0.5))
+    
+    model.add(layers.Dense(512))    
+    model.add(Activation("relu"))
+    model.add(layers.BatchNormalization())
+   
+    model.add(layers.Dense(1, activation= 'sigmoid'))
+
+    model.compile(loss = 'binary_crossentropy',
+                  optimizer = optimizers.RMSprop(lr = 1e-4),
+                  metrics = ['acc']
+                  )
+    if display_summary:
+       model.summary()
+    return model
+```
+
