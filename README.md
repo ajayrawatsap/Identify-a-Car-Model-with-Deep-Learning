@@ -1,6 +1,9 @@
 # Identify-a-Car-Model-with-Deep-Learning
 Explore how to practice real world Data Science by collecting data, curating it and apply advanced Deep Learning techniques to
-create high quality models which can be deployed in production.
+create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
+
+# Index
+[data](#Data)
 
 # Data
 - There are 4000 images of two of the popular cars (Swift and Wagonr) in India of make Maruti Suzuki with 2000 pictures belonging to
