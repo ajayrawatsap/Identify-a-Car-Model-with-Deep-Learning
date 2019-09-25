@@ -2,6 +2,7 @@
 Explore how to practice real world Data Science by collecting data, curating it and apply advanced Deep Learning techniques to
 create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
 
+# Index
 - [Identify-a-Car-Model-with-Deep-Learning](#identify-a-car-model-with-deep-learning)
 - [Data](#data)
 - [Big Picture](#big-picture)
@@ -28,7 +29,7 @@ create high quality models which can be deployed in production. Use Keras and Py
   * [Dropout in Pytorch](#dropout-in-pytorch)
   * [Dropout Results with Pytorch](#dropout-results-with-pytorch)
   * [Dropout Source code in Pytorch](#dropout-source-code-in-pytorch)
-  * [Batch normalization](#batch-normalization)
+- [Batch normalization](#batch-normalization)
   * [Batch Normalization in Keras](#batch-normalization-in-keras)
   * [Batch Normalization results in Keras](#batch-normalization-results-in-keras)
   * [Batch Normalization source code in Keras](#batch-normalization-source-code-in-keras)
@@ -162,13 +163,13 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-### Keras: Training and Validations Results
+## Keras: Training and Validations Results
 The model was trained for 50 epochs on a Kaggle notebook with GPU and achived accuracy of 88.125 percent on validation set.
 ![results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_keras_cnn_base.PNG)
 - I had set a conservative target of 80% accuracy, but it seems our baseline CNN model performed better than expected with 88% accuracy.  If you ask me if this a good accuracy, and I might say it’s pretty good considering that a random classifier will be 50% accurate as there are  equal number of samples of each class.  But how is the performance compared to a human, and I will agree that humans will typically perform with 96% accuracy. The benchmark is raised, and our goal will be to achieve near human performance. At this point we have no idea if we can achieve the target accuracy.
 - Ok, the model is pretty good for a baseline model, what about its robustness, can it perform well on unseen data?. As we can see from the screenshot that the training accuracy is much higher than the validation accuracy throughout all epochs, and now we are talking the bias and variance tradeoff. The model is clearly showing classic symptoms of low bias (since training accuracy is near 100%), and high variance(since validation accuracy is much lower at 88) or overfitting.  I would be not willing to put this model into production even if you think the accuracy is good enough. As we will see there many ways to deal with this and we will explore it in next sections.
 
-### Keras source code 
+## Keras source code 
  - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_cnn_baseline.ipynb)
  - [kaggle](https://www.kaggle.com/ajaykgp12/cars-keras-cnn?scriptVersionId=20357823)
  ## Training in Pytorch
@@ -201,12 +202,12 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         x = self.fc2(x)
  ```
 The Pytorch model differs slightly as we have two output neurons instead of one in Keras.  This is fine because in this case we can imagine each neuron outputting result corresponding to each class. The loss function [CrossEntropyLoss]( https://pytorch.org/docs/stable/nn.html#crossentropyloss) used in Pytorch includes the SoftMax activation and therefor no need to activate the output neurons. In Keras a single output neuron activated by sigmoid activation function which is outputting probability of positive class.  
-### Pytorch: Training and Validations Results
+## Pytorch: Training and Validations Results
 ![keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
 - It was little time consuming to re-write the same model in Pytorch as it does not have Keras like fit method to train as well as evaluation your model on validation set. In Pytorch you will have to write your own training and test methods and run each method for every epoch. The advantage is you have more control at every epoch and can write custom metrics or loss functions easily.We can see that the Pytorch model displays same pattern as Keras with low bias and high variance.
 - The Pytorch performs  better with validation accuracy of 0.896 compared to 0.88125 in Keras. This can be due to normalization, in Pytorch the image pixel values are scaled to [-1,1] while in Keras the same are scaled to [0,1].  When I used the scaling of [0,1] in Pytorch the results were even worse than Keras. So, its would be worthwhile to revisit and check how Keras performs under same normalization
 
-### Pytorch source code
+## Pytorch source code
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-cnn?scriptVersionId=20577825)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_cnn.ipynb)
 # Using Data Augmentation 
@@ -304,7 +305,7 @@ Unlike in Keras the validation accuracy decreased with dropout from 0.966 to 0.9
 - [Kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-aug-bn?scriptVersionId=20582538)
 - [github](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug_drop.ipynb)
 
-## Batch normalization
+# Batch normalization
 - [Batch normalization](https://en.wikipedia.org/wiki/Batch_normalization) is a technique for improving the speed, performance, and stability of artificial neural networks. Batch normalization was introduced in a 2015 [paper](https://arxiv.org/pdf/1502.03167.pdf). It is used to normalize the input layer by adjusting and scaling the activations.
 
 - In a typical neural network, we pre-process the data by normalizing so that the input values in well-defined range. For example, the Image pixel values are between [0, 255] and we have converted it to [-1,1] as in case of our Pytorch model or [0,1] for our Keras Model. 
