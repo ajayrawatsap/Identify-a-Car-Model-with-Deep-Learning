@@ -3,7 +3,9 @@ Explore how to practice real world Data Science by collecting data, curating it 
 create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
 
 # Index
-[data](#Data)
+[Data](#Data)
+[Big Picture](#Big-Picture)
+
 
 # Data
 - There are 4000 images of two of the popular cars (Swift and Wagonr) in India of make Maruti Suzuki with 2000 pictures belonging to
@@ -15,13 +17,12 @@ Beautifulsoup library was used to extract and download images from HTML tags
 also create a notebook directly on Kaggle and access data in your notebook.
 ![data_image](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cover_image.PNG)
 
-# Context
+# Big Picture
 - Data science beginners often start with curated set of data, but it's a well-known fact that in a real Data Science Project, major time is spent on collecting, cleaning and organizing data.  Also, domain expertise is considered as important aspect of creating good ML models. 
 - Being an automobile enthusiast, I took up this challenge to collect images of two of the popular car models from a used car website, where users upload the images of the car they want to sell and then train a Deep Neural Network to identify model of a car from car images. 
 - In my search for images I found that approximately 10 percent of the car pictures did not represent the intended car correctly and those pictures must be deleted from final data.
 
-# Topics that would be covered 
-We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
+- We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
 - Keras is a high-level deep learning framework and is very well suited for fast prototyping and is also recommended for beginners. 
 - Pytorch is gaining popularity due to its use in Research and is considered pythonic, it provides flexibility to experiment with different Neural Network Architectures. 
 - TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting Ideas from Keras and Pytorch. TensorFlow is most suited to deployment in production with support to multiple production environments.
