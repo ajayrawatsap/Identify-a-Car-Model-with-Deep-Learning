@@ -2,11 +2,38 @@
 Explore how to practice real world Data Science by collecting data, curating it and apply advanced Deep Learning techniques to
 create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
 
-# Index
-- [Data](#Data)
-- [Big Picture](#Big-Picture)
-- [Pre-Requisites, Resources and Acknowledgments](#Pre-Requisites-Resources-and-Acknowledgments)
-- [# A note on the motivation and challenges](#A-note-on-the-motivation-and-challenges)
+- [Identify-a-Car-Model-with-Deep-Learning](#identify-a-car-model-with-deep-learning)
+- [Data](#data)
+- [Big Picture](#big-picture)
+- [Pre-Requisites, Resources and Acknowledgments](#pre-requisites--resources-and-acknowledgments)
+- [A note on the motivation and challenges](#a-note-on-the-motivation-and-challenges)
+- [Training a base CNN model](#training-a-base-cnn-model)
+  * [Training in Keras](#training-in-keras)
+    + [Keras: Training and Validations Results](#keras--training-and-validations-results)
+    + [Keras source code](#keras-source-code)
+  * [Training in Pytorch](#training-in-pytorch)
+    + [Pytorch: Training and Validations Results](#pytorch--training-and-validations-results)
+    + [Pytorch source code](#pytorch-source-code)
+- [Using Data Augmentation](#using-data-augmentation)
+  * [Data Augmentation in Keras](#data-augmentation-in-keras)
+  * [Data Augmentation Results in Keras](#data-augmentation-results-in-keras)
+  * [Data Augmentation source code in Keras](#data-augmentation-source-code-in-keras)
+  * [Data Augmentation in Pytorch](#data-augmentation-in-pytorch)
+  * [Data Augmentation Results in Pytorch](#data-augmentation-results-in-pytorch)
+  * [Data Augmentation source code in Pytorch](#data-augmentation-source-code-in-pytorch)
+- [Train with Dropout](#train-with-dropout)
+  * [Dropout in Keras](#dropout-in-keras)
+  * [Dropout Results with Keras](#dropout-results-with-keras)
+  * [Dropout Source code in Keras](#dropout-source-code-in-keras)
+  * [Dropout in Pytorch](#dropout-in-pytorch)
+  * [Dropout Results with Pytorch](#dropout-results-with-pytorch)
+  * [Dropout Source code in Pytorch](#dropout-source-code-in-pytorch)
+  * [Batch normalization](#batch-normalization)
+  * [Batch Normalization in Keras](#batch-normalization-in-keras)
+  * [Batch Normalization results in Keras](#batch-normalization-results-in-keras)
+  * [Batch Normalization source code in Keras](#batch-normalization-source-code-in-keras)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 # Data
