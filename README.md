@@ -10,11 +10,11 @@ create high quality models which can be deployed in production. Use Keras and Py
 - [A note on the motivation and challenges](#a-note-on-the-motivation-and-challenges)
 - [Training a base CNN model](#training-a-base-cnn-model)
   * [Training in Keras](#training-in-keras)
-    + [Keras: Training and Validations Results](#keras--training-and-validations-results)
-    + [Keras source code](#keras-source-code)
+  * [Keras: Training and Validations Results](#keras--training-and-validations-results)
+  * [Keras source code](#keras-source-code)
   * [Training in Pytorch](#training-in-pytorch)
-    + [Pytorch: Training and Validations Results](#pytorch--training-and-validations-results)
-    + [Pytorch source code](#pytorch-source-code)
+  * [Pytorch: Training and Validations Results](#pytorch--training-and-validations-results)
+  * [Pytorch source code](#pytorch-source-code)
 - [Using Data Augmentation](#using-data-augmentation)
   * [Data Augmentation in Keras](#data-augmentation-in-keras)
   * [Data Augmentation Results in Keras](#data-augmentation-results-in-keras)
@@ -35,6 +35,7 @@ create high quality models which can be deployed in production. Use Keras and Py
   * [Batch Normalization source code in Keras](#batch-normalization-source-code-in-keras)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # Data
