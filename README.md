@@ -5,6 +5,8 @@ create high quality models which can be deployed in production. Use Keras and Py
 # Index
 - [Data](#Data)
 - [Big Picture](#Big-Picture)
+- [Pre-Requisites, Resources and Acknowledgments](#Pre-Requisites-Resources-and-Acknowledgments)
+- [# A note on the motivation and challenges](#A-note-on-the-motivation-and-challenges)
 
 
 # Data
