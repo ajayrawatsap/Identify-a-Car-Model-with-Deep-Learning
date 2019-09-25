@@ -3,8 +3,8 @@ Explore how to practice real world Data Science by collecting data, curating it 
 create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
 
 # Index
-[Data](#Data)
-[Big Picture](#Big-Picture)
+- [Data](#Data)
+- [Big Picture](#Big-Picture)
 
 
 # Data
