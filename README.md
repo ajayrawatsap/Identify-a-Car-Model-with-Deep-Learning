@@ -3,7 +3,6 @@ Explore how to practice real world Data Science by collecting data, curating it 
 create high quality models which can be deployed in production. Use Keras and Pytorch libraries in python for applying advanced techniques like data augmentation, drop out, batch normalization and transfer learning
 
 # Index
-- [Identify-a-Car-Model-with-Deep-Learning](#identify-a-car-model-with-deep-learning)
 - [Data](#data)
 - [Big Picture](#big-picture)
 - [Pre-Requisites, Resources and Acknowledgments](#pre-requisites--resources-and-acknowledgments)
