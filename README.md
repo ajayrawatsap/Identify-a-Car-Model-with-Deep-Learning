@@ -41,51 +41,50 @@ create high quality models which can be deployed in production. Use Keras and Py
 - There are 4000 images of two of the popular cars (Swift and Wagonr) in India of make Maruti Suzuki with 2000 pictures belonging to
 each model class. The data is divided into training set with 2400 images, validation set with 800 images and test set with 800 images. 
 - The data was randomized before splitting into training, test and validation set.
-- Data was collected using a web scraper written in python. Selenium library was used to load the full HTML page and then
+- Data was collected using a web scraper written in python. Selenium library was used to load the full HTML page and 
 Beautifulsoup library was used to extract and download images from HTML tags
 - The data is hosted at [Kaggle](https://www.kaggle.com/ajaykgp12/cars-wagonr-swift) which can be downloaded or you can 
 also create a notebook directly on Kaggle and access data in your notebook.
 ![data_image](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cover_image.PNG)
 
 # Big Picture
-- Data science beginners often start with curated set of data, but it's a well-known fact that in a real Data Science Project, major time is spent on collecting, cleaning and organizing data.  Also, domain expertise is considered as important aspect of creating good ML models. 
+- Data science beginners often start with curated set of data, but it's a well-known fact that in a real Data Science Projects, major time is spent on collecting, cleaning and organizing data.  Also, domain expertise is considered as an important aspect of creating good ML models. 
 - Being an automobile enthusiast, I took up this challenge to collect images of two of the popular car models from a used car website, where users upload the images of the car they want to sell and then train a Deep Neural Network to identify model of a car from car images. 
 - In my search for images I found that approximately 10 percent of the car pictures did not represent the intended car correctly and those pictures must be deleted from final data.
 
-- We will explore all Major Deep Learning framework starting from Keras, and moving to Pytorch and TensorFlow 2.0. 
+- We will explore all Major Deep Learning framework starting from Keras, and moving on to Pytorch and TensorFlow 2.0. 
 - Keras is a high-level deep learning framework and is very well suited for fast prototyping and is also recommended for beginners. 
 - Pytorch is gaining popularity due to its use in Research and is considered pythonic, it provides flexibility to experiment with different Neural Network Architectures. 
-- TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting Ideas from Keras and Pytorch. TensorFlow is most suited to deployment in production with support to multiple production environments.
+- TensorFlow 2.0 is a revamp of old TensorFlow 1.xxx version which was not very user friendly with steep learning curve, static graphs and lots of boilerplate code to get things done. TensorFlow 2.0 solves this problem by adopting ideas from Keras and Pytorch. TensorFlow is most suited to deployment in production with support to multiple production environments.
 
-As we are dealing with Images, we will be focusing on Convolutional Neural Networks (CNNs / ConvNets), and start with simple CNN and train it from scratch.
-We will then move to advance techniques like Data Augmentation, Dropout, Batch Normalization and  Transfer Learning using Pre-Trained networks like VGG16 trained on ImageNet.
+As we are dealing with Images, we will be focusing on Convolutional Neural Networks (CNNs / ConvNets), and start with simple CNN Model and train it from scratch.
+We will then move on to advance techniques like Data Augmentation, Dropout, Batch Normalization and  Transfer Learning using Pre-Trained networks like VGG16 trained on ImageNet.
 <br> As we progress in our journey we will also explore some key aspects below, which are important for any Data Science Project.
 1.	How much data is enough to get reliable results from Deep Neural Networks and is more data is always good?
 2.	How do I deal with Bias and Variance tradeoff, and how to select best model which can generalize better without sacrificing too much of performance?
-3.	For Image recognition tasks what works best, custom CNN model or a Pre-Trained network?
+3.	For image recognition tasks what works best, custom CNN model or a Pre-Trained network?
 4.	What strategy to choose to validate the model performance. Hint: Trust your validation score and do not touch test set till end.
 5. What Deep Learning Framework to choose and which one is best suitable for the task.
 
 <br>There are no straightforward answers to some of the questions and it depends on context and the type of problem or data that we are dealing with, and it will be my endeavor to answers some of the difficult questions with experimentation and analysis.
 
 # Pre-Requisites, Resources and Acknowledgments
-- It is assumed that you have some experience in Python and Basic Deep Learning Concepts.
+- It is assumed that you have some experience in Python and basic deep learning concepts.
 
-- Many of the ideas presented here are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras Library
+- Many of the ideas presented here are based on book [Deep Learning with Python]( https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438), written by Francois Chollet who also happens to be author of Keras library
 
-- Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though its paid course the Videos are freely available on YouTube. Initially it was not easy to grasp the convolutions, but thanks to Andrew Ng, Convolution Neural Networks no longer appear to be convoluted
+- Another excellent resource to learn theoretical concepts around deep learning is [Deep Learning Specialization]( https://www.coursera.org/specializations/deep-learning) taught by Andrew Ng on Coursera. Even though this is paid course the videos are freely available on YouTube. Initially it was not easy to grasp the convolutions, but thanks to Andrew Ng, Convolution Neural Networks no longer appear to be convoluted
 
-- The book  focuses on the practical application while  Andrew Ng gravitates towards theoretical concepts with easy to understand mathematics. I have personally benefit from both, and even though both differ in their approaches they complement each other well just like Ensemble Machine learning models.
+- The book  focuses on the practical application while  Andrew Ng gravitates towards theoretical concepts with easy to understand mathematics. I have personally benefit from both, and even though both differ in their approaches they complement each other well just like ensemble machine learning models.
 
-- Its recommended that that code be run on machine with GPU, there are many ways to achieve it without owning a high-end machine.  You can use Kaggle Notebook with GPU which is what I would be doing throughout the project. Links to Kaggle Notebooks will be shared and it can be forked, modified and results can be easily reproduced without any extra set up
-<br>Another way is to use Google Colab or Google Cloud Platform with free credits of 300 USD.
+- Its recommended that that code be run on machine with GPU, there are many ways to achieve it without owning a high-end machine.  You can use Kaggle Notebook with GPU which is what I would be doing throughout the project. Links to Kaggle Notebooks will be shared and it can be forked, modified and results can be easily reproduced without any extra set up. Another way is to use Google Colab or Google Cloud Platform with free credits of 300 USD.
 
 # A note on the motivation and challenges
-- When I started with this project my goal was to achieve a reasonable performance with my Image Classification model with more focus on building a robust model which can generalize well on unseen data.
-- The data is user generated and images are taken by many users from all over India, from different angles, under different lighting conditions and mostly using mobile devices with varying image quality. 
+- When I started with this project my goal was to achieve a reasonable performance with my image classification model with more focus on building a robust model which can generalize well on unseen data.
+- The data is user generated and images are taken by many users from all over India, from different angles, under different lighting conditions and  using mobile devices with varying image quality. 
 - This presents an interesting challenge and I am very much curious as well as anxious as to how things would turn out. 
-  I had heard multiple stories on how some models which performed well during training, failed  te perform on new data that came from different distribution.
-- To make sure that our models are robust here are some techniques that we will apply.
+  There are multiple stories on how some models which performed well during training, failed  to perform on new data that came from different distribution.
+- To make sure that our model is robust here are some techniques that we will apply.
   1.	When gathering data, I made sure that I downloaded car images from multiple regions like Delhi, UP, Maharashtra etc.
   2.	Delete images which are not car, incorrect model, closeup images, interior images. Anything which a human cannot recognize most likely ML model probably can’t recognize. Interestingly one of the class of data is WagonR, the model I owned for 7 years so it was easy for me to curate the data manually. This is where domain experience comes in handy.
   3.	The data is randomized and split into Training Set with 2400 images, Validation Set with 800 images and test set with 800 images. The model will be trained on training set, fine-tuned with feedback from validation data and test data will not evaluated until end when we have found our best model based on validation set. This is important because the test set acts as unseen data which model will encounter in future and if it performs well on this data, our model  will perform well on unseen data. To further challenge our model, I have created another set of test data which was taken from different used car website and  different city (Hyderabad).
@@ -97,9 +96,10 @@ Hold on with your seat belts, grab some popcorn, and be ready for an exciting as
 The CNN model architecture is shown below.
 ![model_arch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/cnn_arch.PNG)
 
-- The images are converted to 150 X 150 X 3 shape and fed to CNN model. The first CONVD layer performs convolution on the input image with 32 filters with filter size of 3, resulting in layer of dimension 148 X 148 X 32,  which is then down sampled by a Max Pool layer of filter size 2 and stride of 2 resulting in layer of dimensions 74X74X32.  We are using four CONVD layers each with filter size of 3, followed by a Max Pooling layer of filter size 2 and stride of 2. The output from last MAX pool layer is flattened and converted to Dense layer of shape 512 X 1. The Final output layer consists of a single layer with sigmoid activation function. The other layers use Relu Activation Function
+- The images are converted to 150 X 150 X 3 shape and fed to CNN model. The first CONVD layer performs convolution on the input image with 32 filters with filter size of 3, resulting in layer of dimension 148 X 148 X 32,  which is then down sampled by a Max Pool layer of filter size 2 and stride of 2 resulting in layer of dimensions 74X74X32.  We are using four CONVD layers each with filter size of 3, followed by a Max Pooling layer of filter size 2 and stride of 2. The output from last MAX pool layer is flattened and converted to dense layer of shape 512 X 1. The final output layer consists of a single layer with sigmoid activation function. The other layers use Relu Activation Function
 
-- You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while Max pool layer halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course
+- You can notice that convolution operation increases the depth of the layer while keeping height and width almost same, while max pool operation halves the height and width while keeping depth same. There is very simple math behind it which is not in scope of this tutorial. Andrew Ng explains this very well in his course.
+
 ## Training in Keras
 The keras code for buliding model is shown below
 ```python
@@ -201,10 +201,10 @@ The model was trained for 50 epochs on a Kaggle notebook with GPU and achived ac
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
  ```
-The Pytorch model differs slightly as we have two output neurons instead of one in Keras.  This is fine because in this case we can imagine each neuron outputting result corresponding to each class. The loss function [CrossEntropyLoss]( https://pytorch.org/docs/stable/nn.html#crossentropyloss) used in Pytorch includes the SoftMax activation and therefor no need to activate the output neurons. In Keras a single output neuron activated by sigmoid activation function which is outputting probability of positive class.  
+The Pytorch model differs slightly as we have two output neurons instead of one in Keras.  This is fine because in this case we can imagine each neuron outputting result corresponding to each class. The loss function [CrossEntropyLoss]( https://pytorch.org/docs/stable/nn.html#crossentropyloss) used in Pytorch includes the SoftMax activation and there no need to activate the output neurons. In Keras a single output neuron is activated by sigmoid activation function which is outputting probability of positive class.  
 ## Pytorch: Training and Validations Results
 ![keras_cnn_base_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/results_pytorch_cnn_base.PNG)
-- It was little time consuming to re-write the same model in Pytorch as it does not have Keras like fit method to train as well as evaluation your model on validation set. In Pytorch you will have to write your own training and test methods and run each method for every epoch. The advantage is you have more control at every epoch and can write custom metrics or loss functions easily.We can see that the Pytorch model displays same pattern as Keras with low bias and high variance.
+- It was little time consuming to re-write the same model in Pytorch as it does not have Keras like fit method to train as well as evaluate your model on validation set. In Pytorch you will have to write your own training and test methods and run each method for every epoch. The advantage is you have more control at every epoch and can write custom metrics or loss functions easily and implement callbacks like early stopping and saving/keeping best model. We can see that the Pytorch model displays same pattern as Keras with low bias and high variance.
 - The Pytorch performs  better with validation accuracy of 0.896 compared to 0.88125 in Keras. This can be due to normalization, in Pytorch the image pixel values are scaled to [-1,1] while in Keras the same are scaled to [0,1].  When I used the scaling of [0,1] in Pytorch the results were even worse than Keras. So, its would be worthwhile to revisit and check how Keras performs under same normalization
 
 ## Pytorch source code
@@ -229,8 +229,8 @@ It is a common misconception that data augmentation increases the training data 
 ## Data Augmentation Results in Keras
 ![kera_sug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/keras_aug_results.PNG)
 
-- The results are impressive, and our validation accuracy jumped from 0.88 to 0.95, we are very close to our target accuracy of 0.96 or more to beat human performance. Our model is not overfitting, as we can see the training and validation curves are close to each other
-- Please note that the benchmark accuracy of 0.96 for humans for based on what I have read on research papers and for our data it may or may not eb correct. But having a benchmark is always good to compare how our model performed. 
+- The results are impressive, and our validation accuracy jumped from 0.88 to 0.95, we are very close to our target accuracy of 0.96 or more to beat human performance. Our model is not overfitting, as the training and validation curves are close to each other
+- Please note that the benchmark accuracy of 0.96 for humans for based on what I have read on research papers and for our data it may or may not be correct. But having a benchmark is always good to know how our model performed. 
  
 
 ## Data Augmentation source code in Keras
@@ -252,7 +252,7 @@ transform_train = transforms.Compose( [
 ![pytorch_aug](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug.PNG)
 ## Data Augmentation Results in Pytorch
 ![pytorch_aug_results](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_aug_results.PNG)
-Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pytorch score of 0.965 is still ahead of Keras score of 0.95, but I believe with some fine tuning we can achieve similar score in Keras too. What’s more important is that our strategy seems to be working fine and we have broken the benchmark human performed of 0.96 in this step. But we will not celebrate yet, as we have not tested on the test set against which we will compare the benchmark performance. We will continue to fine tune with other strategies like Dropout, Batch Normalization and Transfer Learning. Stay tuned.
+Our score jumped from 0.896 to 0.965 inline with what we saw with Keras. The Pytorch score of 0.965 is still ahead of Keras score of 0.95, but I believe with some fine tuning we can achieve similar score in Keras too. What’s more important is that our strategy seems to be working fine and we have broken the benchmark human performance of 0.96 in this step. But we will not celebrate yet, as we have not tested on the test set against which we will compare the benchmark performance. We will continue to fine tune with other strategies like Dropout, Batch Normalization and Transfer Learning. Stay tuned.
 
 ## Data Augmentation source code in Pytorch
 - [kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-aug?scriptVersionId=20578393)
@@ -263,9 +263,9 @@ Dropout was proposed by Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ily
 It works by randomly turning off activations of some neurons. The number of neurons to drop are defined by  probability defined in dropout layer.
 The image below explains this process.
 ![dropout](https://www.researchgate.net/profile/Amine_Ben_khalifa/publication/309206911/figure/fig3/AS:418379505651712@1476760855735/Dropout-neural-network-model-a-is-a-standard-neural-network-b-is-the-same-network.png)
-- You can imagine this process by taking an example of classroom where in a class only a few students would generally participate in discussions and the rest of class remains silent. The quality of teaching suffers because teacher is changing the content of the teaching based on the few students. If teacher randomly asks a group of students to participate in discussion, the silent ones would start paying more attention and teacher can fine tune the content based on more feedback.
+- You can imagine this process by taking an example of classroom where in a class only a few students would generally participate in discussions and the rest of class usually  remains silent. The quality of teaching suffers because teacher is changing the content  based on the feedback of select few students. If teacher randomly asks a group of students to participate in discussion, the silent ones would start paying more attention and teacher can fine tune the content with more feedback.
 
-- We will apply dropout immediately after flattening the layer. If you see the network architecture the number of neurons on flattened layer is 6272 and we will apply drop out on the layer by randomly dropping 50% neurons. There is no need to apply dropout on ConvD layers as the output neurons are few. We will also need to rum more. We will also need to train for more epochs(200) as dropout takes more iteration to converge 
+- We will apply dropout immediately after flattening the layer. If you see the network architecture, the number of neurons on flattened layer is 6272 and we will apply dropout on this layer by randomly dropping 50% neurons. There is no need to apply dropout on ConvD layers as the output neurons are few. We will also need to train for more epochs(200) as dropout takes more iteration to converge 
 
 ## Dropout in Keras
 Its very simple to add dropout layer in keras as shown in code example below
