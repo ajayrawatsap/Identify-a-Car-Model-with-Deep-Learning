@@ -406,7 +406,8 @@ class Net(nn.Module):
    ```
 ## Batch Normalization results in Pytorch
 ![pytorch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_bn_results.PNG)
-The accuracy is 0.965 which is marginal improvement over previous best score 0.965, which was trained with data augmentation only. Note that the training and validation curves are close to each other which means  our model will is not overfitting . This is kind of model I would want to put in production but our task is not finsihed yet, we will explore transfer learning in next section. 
+- The accuracy is 0.965 which is marginal improvement over previous best score 0.965, which was trained with data augmentation only. Note that the training and validation curves are close to each other which means  our model will is not overfitting . This is kind of model I would want to put in production but our task is not finsihed yet, we will explore transfer learning in next section. 
+- Note: We created model with batch normalization after relu activation function in our example. Training model with batch normalization before relu activation function resulted in better accuracy score of 0.97, but the training and validation curves were not smooth with unstable results, hence the model was discarded. You can check the [Kaggle](https://www.kaggle.com/ajaykgp12/cars-pytorch-aug-bn?scriptVersionId=20606746) script  for this model.
 ## Batch Normalization source code in Pytorch
 - [Kaggle]( https://www.kaggle.com/ajaykgp12/cars-pytorch-aug-bn?scriptVersionId=20606325)
 - [guthub]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug_bn.ipynb )
