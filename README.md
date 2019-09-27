@@ -372,3 +372,30 @@ This concludes the custom CNN training and we will move to transfer learning in 
 ## Batch Normalization source code in Keras
 - [keras]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20617761)
 - [guthub]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug_drop_bn.ipynb)
+
+## Batch Normalization in Pytorch
+The implementation of Pytorch for batch implementation is shown below, only partial code is shown, refer to source code link to see full implemenation.
+```python
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels= 3, out_channels=32, kernel_size= 3)
+        self.bn1   = nn.BatchNorm2d(32)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride= 2)        
+        
+        self.conv2 =  nn.Conv2d(in_channels= 32, out_channels= 64, kernel_size= 3)
+        self.bn2   = nn.BatchNorm2d(64)
+        ..................
+        
+      def forward(self, x):
+        x = self.conv1(x) 
+        x = self.bn1(x)
+        x = F.relu(x)      
+        x = self.pool(x)
+        
+        x = self.conv2(x) 
+        x = self.bn2(x)
+        x = F.relu(x)       
+        x = self.pool(x)    
+        ...............
+   '''
