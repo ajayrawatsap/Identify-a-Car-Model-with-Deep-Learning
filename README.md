@@ -370,7 +370,7 @@ The accuracy on validation boosted from 0.956 to 0.961 and training validation c
 This concludes the custom CNN training and we will move to transfer learning in next section where we will use a pre-trained network VGG16 and find out if we can further improve our model performance.
 
 ## Batch Normalization source code in Keras
-- [keras]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20617761)
+- [kaggle]( https://www.kaggle.com/ajaykgp12/cars-keras-data-aug-dropout-bn?scriptVersionId=20617761)
 - [guthub]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/keras/cars_keras_data_aug_drop_bn.ipynb)
 
 ## Batch Normalization in Pytorch
@@ -385,17 +385,29 @@ class Net(nn.Module):
         
         self.conv2 =  nn.Conv2d(in_channels= 32, out_channels= 64, kernel_size= 3)
         self.bn2   = nn.BatchNorm2d(64)
-        ..................
         
-      def forward(self, x):
+       ..........................
+       
+       
+
+    def forward(self, x):
         x = self.conv1(x) 
+        x = F.relu(x)
         x = self.bn1(x)
-        x = F.relu(x)      
         x = self.pool(x)
         
         x = self.conv2(x) 
+        x = F.relu(x)
         x = self.bn2(x)
-        x = F.relu(x)       
-        x = self.pool(x)    
-        ...............
-   '''
+        x = self.pool(x)
+        
+        ................      
+ 
+   ```
+## Batch Normalization results in Pytorch
+![pytorch](https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/resources/pytorch_bn_results.PNG)
+The accuracy is 0.965 which is marginal improvement over previous best score 0.965, which was trained with data augmentation only. Note that the training and validation curves are close to each other which means  our model will is not overfitting . This is kind of model I would want to put in production but our task is not finsihed yet, we will explore transfer learning in next section. 
+## Batch Normalization source code in Pytorch
+- [Kaggle]( https://www.kaggle.com/ajaykgp12/cars-pytorch-aug-bn?scriptVersionId=20606325)
+- [guthub]( https://github.com/ajayrawatsap/Identify-a-Car-Model-with-Deep-Learning/blob/master/pytorch/cars_pytorch_data_aug_bn.ipynb )
+
